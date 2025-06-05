@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -30,9 +31,11 @@ import com.giraffe.donutsapp.ui.theme.White
 import com.giraffe.donutsapp.ui.theme.fontFamily
 
 @Composable
-fun OnBoardScreen() {
+fun OnBoardScreen(modifier: Modifier = Modifier) {
     Box(
-        modifier = Modifier.background(PiggyPink)
+        modifier = modifier
+            .fillMaxSize()
+            .background(PiggyPink)
     ) {
         Image(
             modifier = Modifier.fillMaxWidth(),
@@ -71,7 +74,7 @@ fun OnBoardScreen() {
                     containerColor = White,
                     contentColor = Black
                 ),
-                contentPadding = PaddingValues(vertical = 22.dp, horizontal = 118.dp),
+                contentPadding = PaddingValues(vertical = 22.dp, horizontal = 90.dp),
                 onClick = {}) {
                 Text(
                     text = "Get Started",
