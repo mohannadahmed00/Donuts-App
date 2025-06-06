@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -43,7 +42,7 @@ fun OfferCard(
     Box {
         Box(
             modifier = modifier
-                .padding(end = 64.dp)
+                .padding(end = 50.dp)
                 .width(193.dp)
                 .shadow(
                     15.dp,
@@ -71,10 +70,9 @@ fun OfferCard(
                 }
                 Image(
                     modifier = Modifier
-                        .padding(bottom = 17.dp)
-                        //.size(137.dp)
-                        .aspectRatio(1f)
-                        .offset(84.dp),
+                        .padding(bottom = 0.dp)
+                        .size(137.dp)
+                        .offset(x = 84.dp),
                     painter = painterResource(offer.donutImgRes),
                     contentDescription = "donut",
                     contentScale = ContentScale.Crop
@@ -82,6 +80,8 @@ fun OfferCard(
                 Text(
                     modifier = Modifier.padding(bottom = 9.dp),
                     text = offer.name,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                     style = TextStyle(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Medium,

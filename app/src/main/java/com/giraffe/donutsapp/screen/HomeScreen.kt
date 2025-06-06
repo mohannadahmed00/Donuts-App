@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
@@ -38,11 +40,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxSize()
             .background(White),
-        verticalArrangement = Arrangement.Center
     ) {
         Row(
             modifier = Modifier
-                .padding(start = 38.dp, top = 0.dp, bottom = 45.dp, end = 40.dp)
+                .padding(start = 35.dp, end = 35.dp, top = 38.dp)
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.Top
@@ -71,7 +72,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             ButtonWithIcon(modifier = Modifier.padding(top = 3.dp))
         }
         Text(
-            modifier = Modifier.padding(start = 39.dp, bottom = 19.dp),
+            modifier = Modifier.padding(start = 35.dp, top = 44.dp),
             text = "Today Offers",
             style = TextStyle(
                 fontSize = 20.sp,
@@ -81,15 +82,17 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             )
         )
         LazyRow(
-            modifier = Modifier.padding(bottom = 46.dp),
-            contentPadding = PaddingValues(horizontal = 56.dp)
+            modifier = Modifier
+                .padding(top = 19.dp)
+                .height(325.dp),
+            contentPadding = PaddingValues(horizontal = 35.dp)
         ) {
             items(offers) {
                 OfferCard(offer = it)
             }
         }
         Text(
-            modifier = Modifier.padding(start = 39.dp, bottom = 17.dp),
+            modifier = Modifier.padding(start = 35.dp, top = 32.dp),
             text = "Donuts",
             style = TextStyle(
                 fontSize = 20.sp,
@@ -99,8 +102,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             )
         )
         LazyRow(
-            modifier = Modifier.padding(bottom = 34.dp),
-            contentPadding = PaddingValues(horizontal = 39.dp),
+            modifier = Modifier.padding(top = 8.dp),
+            contentPadding = PaddingValues(horizontal = 35.dp),
             horizontalArrangement = Arrangement.spacedBy(21.dp)
         ) {
             items(donuts) {
@@ -109,18 +112,38 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         }
         Row(
             modifier = Modifier
-                .padding(horizontal = 43.dp)
+                .padding(vertical = 35.dp, horizontal = 40.dp)
+                .height(35.dp)
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Image(painter = painterResource(R.drawable.home), contentDescription = null)
-            Image(painter = painterResource(R.drawable.heart), contentDescription = null)
-            Image(painter = painterResource(R.drawable.notification), contentDescription = null)
-            Image(painter = painterResource(R.drawable.cart), contentDescription = null)
-            Image(painter = painterResource(R.drawable.profile), contentDescription = null)
+            Image(
+                modifier = Modifier.size(35.dp),
+                painter = painterResource(R.drawable.home),
+                contentDescription = null
+            )
+            Image(
+                modifier = Modifier.size(35.dp),
+                painter = painterResource(R.drawable.heart),
+                contentDescription = null
+            )
+            Image(
+                modifier = Modifier.size(35.dp),
+                painter = painterResource(R.drawable.notification),
+                contentDescription = null
+            )
+            Image(
+                modifier = Modifier.size(35.dp),
+                painter = painterResource(R.drawable.cart),
+                contentDescription = null
+            )
+            Image(
+                modifier = Modifier.size(35.dp),
+                painter = painterResource(R.drawable.profile),
+                contentDescription = null
+            )
         }
     }
-
 }
 
 @Preview(widthDp = 428, heightDp = 926)
